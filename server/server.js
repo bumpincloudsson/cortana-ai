@@ -1,3 +1,6 @@
+// Open AI from seansees7 acc
+// When dling this repo, make a `.env` file in the same `server/` and paste the following
+// OPENAI_API_KEY='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'
 import express from 'express';
 import * as dotenv from 'dotenv';
 import cors from 'cors';

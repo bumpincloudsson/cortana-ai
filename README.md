@@ -71,3 +71,5 @@ Building the logic and functionality of our app
 Build the server to handle the requests and post methods from the front end, e.g. whatever is typed into the form, and then communicate that via API to text-davinci-003
 
 Finally, send that response from text davinci to the front end to render the response
+
+Make sure you make the `.env` file in `server/`

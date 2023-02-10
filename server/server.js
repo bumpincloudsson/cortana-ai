@@ -1,8 +1,6 @@
-// Open AI from seansees7 acc
-// When dling this repo, make a `.env` file in the same `server/` and paste the following
-// OPENAI_API_KEY='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'
 import express from 'express';
 import * as dotenv from 'dotenv';
+// cors allows us to use cross origins requests
 import cors from 'cors';
 import { Configuration, OpenAIApi } from 'openai';
 
@@ -15,12 +13,14 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration);
 
 const app = express();
+// also this server to be called from the client side
 app.use(cors());
+// allows json to be sent from the client to this server
 app.use(express.json());
 
 app.get('/', async (req, res) => {
   res.status(200).send({
-    message: 'Hello from CodeX',
+    message: 'Hello from Text DaVinci 003',
   });
 });
 
@@ -29,6 +29,7 @@ app.post('/', async (req, res) => {
     const prompt = req.body.prompt;
 
     const response = await openai.createCompletion({
+      // model: 'code-davinci-002',
       model: 'text-davinci-003',
       prompt: `${prompt}`,
       temperature: 0,
